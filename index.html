@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مسار - جودة في كل خطوة</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="text/javascript" src="js/tailwind.config.js"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+<body class="h-full bg-white text-navy-500">
+  <div id="app" class="h-full w-full overflow-auto hide-scrollbar">
+    <!-- Promo Banner -->
+    <div id="promo-banner" class="bg-leather-500 text-white text-center py-2.5 text-sm font-medium tracking-wide">
+      <span id="promo-text">🎉 تسوق الآن واحصل على خصم 10% على أول طلب!</span>
+    </div>
+    <!-- Header -->
+    <header class="bg-white sticky top-0 z-50 border-b border-navy-100 shadow-sm">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-3 cursor-pointer" onclick="navigate('home')">
+          <div class="w-10 h-10 rounded-lg bg-navy-500 flex items-center justify-center">
+            <svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+              <img src="img/masar.jpg" alt="Masar" style="padding: 1px; border-radius: 9px;" />
+          </svg>
+        </div>
+        <div>
+          <h1 id="store-name-header" class="text-lg font-bold text-navy-500 leading-tight">مسار</h1>
+          <p id="store-slogan-header" class="text-[11px] text-leather-500 font-medium">
+            جودة في كل خطوة
+          </p>
+        </div>
+      </div>
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="nav-link text-sm font-medium text-navy-500 cursor-pointer active" onclick="navigate('home')">الرئيسية</a> <a class="nav-link text-sm font-medium text-navy-500 cursor-pointer" onclick="navigate('products')">المنتجات</a> <a class="nav-link text-sm font-medium text-navy-500 cursor-pointer" onclick="navigate('about')">عن الشركة</a> <a class="nav-link text-sm font-medium text-navy-500 cursor-pointer" onclick="navigate('contact')">اتصل بنا</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <!-- Cart Button --> <button onclick="toggleCart()" class="relative p-2 rounded-full hover:bg-navy-50 transition"> <i data-lucide="shopping-bag" class="w-5 h-5 text-navy-500"></i> <span id="cart-count" class="cart-badge" style="display:none;">0</span> </button> <!-- Mobile Menu --> <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-full hover:bg-navy-50 transition"> <i data-lucide="menu" class="w-5 h-5 text-navy-500"></i> </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-navy-100 px-4 pb-4">
+      <a class="block py-3 text-sm font-medium text-navy-500 border-b border-navy-50 cursor-pointer" onclick="navigate('home');toggleMobileMenu()">الرئيسية</a> <a class="block py-3 text-sm font-medium text-navy-500 border-b border-navy-50 cursor-pointer" onclick="navigate('products');toggleMobileMenu()">المنتجات</a> <a class="block py-3 text-sm font-medium text-navy-500 border-b border-navy-50 cursor-pointer" onclick="navigate('about');toggleMobileMenu()">عن الشركة</a> <a class="block py-3 text-sm font-medium text-navy-500 cursor-pointer" onclick="navigate('contact');toggleMobileMenu()">اتصل بنا</a>
+    </div>
+  </header>
+  <!-- PAGES --> <!-- Home Page -->
+  <div id="page-home">
+    <!-- Hero -->
+    <section class="relative bg-gradient-to-bl from-navy-500 via-navy-600 to-navy-800 overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute w-96 h-96 rounded-full bg-leather-400 -top-20 -right-20 blur-3xl"></div>
+        <div class="absolute w-72 h-72 rounded-full bg-leather-300 bottom-0 left-10 blur-3xl"></div>
+      </div>
+      <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-28 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight anim-fade-up">منتجات <span class="text-leather-300">جلدية</span> و<span class="text-leather-300">مكتبية</span><br>
+          بجودة استثنائية</h2>
+        <p class="mt-5 text-navy-200 text-lg max-w-lg mx-auto anim-fade-up anim-d1">
+          أناقة تدوم مع كل تفصيلة — اكتشف تشكيلتنا المميزة بأسعار لا تُقاوم
+        </p>
+        <button onclick="navigate('products')" class="mt-8 bg-leather-500 hover:bg-leather-600 text-white px-8 py-3.5 rounded-xl font-bold text-base transition-all hover:shadow-lg hover:shadow-leather-500/30 anim-fade-up anim-d2"> تسوّق الآن </button>
+        <div class="mt-10 flex justify-center gap-8 text-navy-200 text-sm anim-fade-up anim-d3">
+          <div class="flex items-center gap-2">
+            <i data-lucide="truck" class="w-4 h-4"></i> توصيل سريع
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4"></i> جودة مضمونة
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="tag" class="w-4 h-4"></i> أسعار تنافسية
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Products Section -->
+    <section id="products-section" class="max-w-6xl mx-auto px-4 py-16">
+      <div class="text-center mb-12">
+        <span class="text-leather-500 text-sm font-bold tracking-widest uppercase">تشكيلتنا</span>
+        <h3 class="text-3xl font-extrabold text-navy-500 mt-2">المنتجات</h3>
+        <div class="w-16 h-1 bg-leather-500 mx-auto mt-4 rounded-full" style="padding: 0;"></div>
+      </div>
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Products injected by JS -->
+      </div>
+    </section>
+    <!-- Return Policy -->
+    <section class="bg-navy-50 py-12">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <div class="inline-flex items-center gap-2 bg-white px-5 py-2 rounded-full shadow-sm mb-4">
+          <i data-lucide="info" class="w-4 h-4 text-leather-500"></i> <span class="text-sm font-bold text-navy-500">سياسة الإرجاع</span>
+        </div>
+        <p class="text-navy-400 text-sm leading-relaxed max-w-xl mx-auto">
+          لا يوجد إرجاع للمنتج، ولكن يمكن إلغاء الطلب عند المعاينة بشرط دفع مصاريف خدمة التوصيل <strong class="text-navy-500">60 جنيه</strong>.
+        </p>
+      </div>
+    </section>
+  </div>
+  <!-- About Page -->
+  <div id="page-about" class="hidden">
+    <section class="max-w-4xl mx-auto px-4 py-20 text-center">
+      <span class="text-leather-500 text-sm font-bold tracking-widest uppercase">من نحن</span>
+      <h3 class="text-3xl font-extrabold text-navy-500 mt-2">عن شركة مسار</h3>
+      <div class="w-16 h-1 bg-leather-500 mx-auto mt-4 rounded-full"></div>
+      <div class="mt-10 bg-navy-50 rounded-2xl p-8 md:p-12 text-right">
+        <p id="about-text" class="text-navy-400 text-lg leading-loose">
+          مسار تقدم منتجات جلدية ومكتبية بأسعار تنافسية وجودة عالية، توصيل سريع في القاهرة. نحرص على اختيار أفضل الخامات لنوفر لعملائنا تجربة تسوق مميزة تجمع بين الأناقة والعملية.
+        </p>
+        <div class="social-icons-container">
+          <a href="https://masar-company.netlify.app/" target="_blank" class="icon-link globe" title="الموقع الإلكتروني">
+            <i class="fas fa-globe"></i>
+          </a>
+
+          <a href="https://wa.me/message/K23PFZXIPJO6N1" target="_blank" class="icon-link whatsapp" title="واتساب">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
+          <a href="https://youtube.com/@masar-company" target="_blank" class="icon-link youtube" title="يوتيوب">
+            <i class="fab fa-youtube"></i>
+          </a>
+
+          <a href="https://www.instagram.com/masar.company.mc" target="_blank" class="icon-link instagram" title="انستجرام">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+            <div class="w-12 h-12 mx-auto bg-leather-50 rounded-full flex items-center justify-center mb-3">
+              <i data-lucide="gem" class="w-5 h-5 text-leather-500"></i>
+            </div>
+            <h4 class="font-bold text-navy-500">جودة عالية</h4>
+            <p class="text-sm text-navy-300 mt-1">
+              خامات مختارة بعناية
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+            <div class="w-12 h-12 mx-auto bg-leather-50 rounded-full flex items-center justify-center mb-3">
+              <i data-lucide="truck" class="w-5 h-5 text-leather-500"></i>
+            </div>
+            <h4 class="font-bold text-navy-500">توصيل سريع</h4>
+            <p class="text-sm text-navy-300 mt-1">
+              لجميع أنحاء القاهرة
+            </p>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center shadow-sm">
+            <div class="w-12 h-12 mx-auto bg-leather-50 rounded-full flex items-center justify-center mb-3">
+              <i data-lucide="heart" class="w-5 h-5 text-leather-500"></i>
+            </div>
+            <h4 class="font-bold text-navy-500">رضا العملاء</h4>
+            <p class="text-sm text-navy-300 mt-1">
+              أولويتنا الأولى
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Contact Page -->
+  <div id="page-contact" class="hidden">
+    <section class="max-w-4xl mx-auto px-4 py-20">
+      <div class="text-center mb-12">
+        <span class="text-leather-500 text-sm font-bold tracking-widest uppercase">تواصل معنا</span>
+        <h3 class="text-3xl font-extrabold text-navy-500 mt-2">اتصل بنا</h3>
+        <div class="w-16 h-1 bg-leather-500 mx-auto mt-4 rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="tel:01289012841" class="bg-navy-50 rounded-2xl p-8 text-center hover:shadow-lg transition group">
+          <div class="w-14 h-14 mx-auto bg-navy-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+            <i data-lucide="phone" class="w-6 h-6 text-white"></i>
+          </div>
+          <h4 class="font-bold text-navy-500 mb-1">الهاتف</h4><p class="text-navy-400 text-sm" dir="ltr">
+            01289012841
+          </p>
+        </a> <a href="mailto:masar.company.mc@gmail.com" class="bg-navy-50 rounded-2xl p-8 text-center hover:shadow-lg transition group">
+          <div class="w-14 h-14 mx-auto bg-leather-500 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+            <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+          </div>
+          <h4 class="font-bold text-navy-500 mb-1">البريد الإلكتروني</h4><p class="text-navy-400 text-sm">
+            masar.company.mc@gmail.com
+          </p>
+        </a>
+        <div class="bg-navy-50 rounded-2xl p-8 text-center">
+          <div class="w-14 h-14 mx-auto bg-navy-500 rounded-full flex items-center justify-center mb-4">
+            <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+          </div>
+          <h4 class="font-bold text-navy-500 mb-1">العنوان</h4>
+          <p class="text-navy-400 text-sm">
+            القاهرة، مصر
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Cart Drawer -->
+  <div id="cart-overlay" class="fixed inset-0 bg-black/40 z-50 hidden opacity-0 transition-opacity duration-300" onclick="toggleCart()"></div>
+  <div id="cart-drawer" class="fixed top-0 left-0 w-full max-w-md h-full bg-white z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="flex items-center justify-between p-5 border-b border-navy-100">
+      <h3 class="text-lg font-bold text-navy-500">🛒 سلة التسوق</h3><button onclick="toggleCart()" class="p-2 hover:bg-navy-50 rounded-full transition"><i data-lucide="x" class="w-5 h-5 text-navy-400"></i></button>
+    </div>
+    <div id="cart-items" class="flex-1 overflow-auto p-5 space-y-4">
+      <div id="cart-empty" class="text-center py-16">
+        <div class="w-20 h-20 mx-auto bg-navy-50 rounded-full flex items-center justify-center mb-4">
+          <i data-lucide="shopping-bag" class="w-8 h-8 text-navy-300"></i>
+        </div>
+        <p class="text-navy-300 font-medium">
+          السلة فارغة
+        </p>
+      </div>
+    </div>
+    <div id="cart-footer" class="hidden border-t border-navy-100 p-5 space-y-3">
+      <div class="flex justify-between text-sm text-navy-400">
+        <span>المجموع الفرعي</span><span id="subtotal">0 ج.م</span>
+      </div>
+      <div class="flex justify-between text-sm">
+        <span class="text-navy-400">التوصيل</span><span id="shipping-cost" class="text-navy-400">60 ج.م</span>
+      </div>
+      <div id="free-shipping-note" class="hidden text-xs text-green-600 font-medium text-center bg-green-50 rounded-lg py-1.5">
+        🎉 توصيل مجاني للطلبات فوق 500 ج.م
+      </div>
+      <div class="flex justify-between text-base font-bold text-navy-500 pt-2 border-t border-navy-100">
+        <span>الإجمالي</span><span id="total">0 ج.م</span>
+      </div>
+      <button onclick="submitOrder()" class="w-full bg-green-600 hover:bg-green-700 text-white py-3.5 rounded-xl font-bold text-base transition flex items-center justify-center gap-2">
+        <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" /><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.336 0-4.512-.726-6.303-1.962l-.44-.324-2.655.89.89-2.655-.324-.44A9.935 9.935 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" />
+        </svg> اطلب عبر واتساب </button>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="bg-navy-500 text-white">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center">
+              <svg width="20" height="20" viewbox="0 0 24 24" fill="none">
+                <img src="img/masar.jpg" alt="Masar" style="padding: 1px; border-radius: 9px;" />         </svg>
+          </div>
+          <div>
+            <span id="store-name-footer" class="font-bold text-base">مسار</span>
+            <p class="text-[10px] text-leather-300">
+              جودة في كل خطوة
+            </p>
+          </div>
+        </div>
+        <p class="text-navy-200 text-sm leading-relaxed">
+          منتجات جلدية ومكتبية عالية الجودة بأسعار تنافسية مع توصيل سريع لجميع أنحاء القاهرة.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-bold mb-4 text-leather-300">روابط سريعة</h4>
+        <div class="space-y-2 text-sm text-navy-200">
+          <a class="block hover:text-white cursor-pointer transition" onclick="navigate('home')">الرئيسية</a> <a class="block hover:text-white cursor-pointer transition" onclick="navigate('products')">المنتجات</a> <a class="block hover:text-white cursor-pointer transition" onclick="navigate('about')">عن الشركة</a> <a class="block hover:text-white cursor-pointer transition" onclick="navigate('contact')">اتصل بنا</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold mb-4 text-leather-300">تواصل معنا</h4>
+        <div class="space-y-3 text-sm text-navy-200">
+          <div class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-leather-400"></i><span dir="ltr">01289012841</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-leather-400"></i><span>masar.company.mc@gmail.com</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-leather-400"></i><span>القاهرة، مصر</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 mt-8 pt-6 text-center text-navy-300 text-xs">
+      © 2026 مسار. جميع الحقوق محفوظة.
+      <div class="social-icons-container">
+        <a href="https://masar-company.netlify.app/" target="_blank" class="icon-link globe" title="الموقع الإلكتروني">
+          <i class="fas fa-globe"></i>
+        </a>
+
+        <a href="https://wa.me/message/K23PFZXIPJO6N1" target="_blank" class="icon-link whatsapp" title="واتساب">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <a href="https://youtube.com/@masar-company" target="_blank" class="icon-link youtube" title="يوتيوب">
+          <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="https://www.instagram.com/masar.company.mc" target="_blank" class="icon-link instagram" title="انستجرام">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
